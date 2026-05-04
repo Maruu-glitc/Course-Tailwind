@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Glass Card</title>
+    <style>
+        body{
+            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2xhc3Ntb3JwaGlzfGVufDB8fDB8fHww&w=1000&q=80') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex items-center justify-center h-screen">
+        <div class="bg-white/30 backdrop-filter backdrop-blur-md border border-white/30 rounded-lg p-8 shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Glass Card</h2>
+            <p class="text-gray-700">This is a glass card with a frosted glass effect using Tailwind CSS.</p>
+        </div>
+    </div>
+
+    <!-- Lingkaran hiasan agar efek blur terasa -->
+    <div class="absolute w-64 h-64 bg-orange-400 rounded-full -top-10 -left-10"></div>
+    <div class="absolute w-80 h-80 bg-purple-500 rounded-full bottom-0 right-0"></div>
+    
+    <!-- KARTU SKY GLASS -->
+    <div class="relative z-10 p-8 rounded-3xl bg-sky-400/30 backdrop-blur-xl border border-sky-200/50 shadow-2xl max-w-sm">
+        <h2 class="text-2xl font-bold text-sky-300 mb-2">Sky Glass</h2>
+        <p class="text-sky-800/95">
+            Warna biru langit yang transparan memberikan kesan segar dan bersih pada UI kamu.
+        </p>
+        <button class="mt-6 w-full py-3 bg-sky-500/50 hover:bg-sky-500/70 text-white font-semibold rounded-xl transition">
+            Action
+        </button>
+    </div>
+    
+    <!-- OPSI B: Kaca Putih dengan Shadow Kuat -->
+    <div class="bg-white/40 backdrop-blur-xl border border-white/20 p-10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+        <h2 class="font-bold text-gray-800">White Glass Mode</h2>
+        <p class="text-gray-600">Terlihat karena bayangan (shadow) yang tebal di bawahnya.</p>
+    </div>
+</body>
+
+</html>

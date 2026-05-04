@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Grid Items</title>
+</head>
+
+<body>
+    <!-- Grid normal -->
+    <h2 class="text-center font-bold">Grid Normal</h2>
+    <!-- 
+        grid-cols di sini sudah di set ke 3, jadi akan ada 3 kolom dalam grid ini.
+        jika ada lebih dari 3 item, maka item ke-4 akan 
+        otomatis pindah ke baris berikutnya/ke bawah item(child) pertama.
+     -->
+    <div class="grid grid-cols-3 gap-4">
+        <div class="bg-blue-500 text-white p-4">Item 1</div>
+        <div class="bg-blue-500 text-white p-4">Item 2</div>
+        <div class="bg-blue-500 text-white p-4">Item 3</div>
+        <div class="bg-blue-500 text-white p-4">Item 4</div>
+    </div>
+
+    <h2 class="text-center font-bold">Grid with Colspan</h2>
+    <div class=" mb-4 flex-grow flex justify-center items-center gap-4">
+        <p
+            class="w-140 rounded-md text-gray-700 font-semibold bg-blue-300/45  border-separate border-2 border-blue-500/20 p-4">
+            Column Span (col-span-n)
+            Digunakan untuk menentukan berapa banyak kolom
+            yang akan ditempati oleh satu item.
+            Aturan: Nilai n tidak boleh melebihi jumlah total kolom pada parent.
+            Jika parent punya grid-cols-3, maka maksimal adalah col-span-3.
+            Class Khusus: col-span-full digunakan agar item otomatis
+            memenuhi satu baris penuh, berapapun jumlah kolomnya.
+            Kegunaan: Membuat Header, Banner, atau Footer.</p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4">
+        <div class="col-span-3 bg-green-500 text-white p-4">Item 1 (Full Width)</div>
+        <div class="bg-red-500 text-white p-4">Item 2</div>
+        <div class="bg-red-500 text-white p-4">Item 3</div>
+    </div>
+
+    <h2 class="text-center font-bold mt-8">Grid With Row Span</h2>
+    <div class=" mb-4 flex-grow flex justify-center items-center gap-4">
+        <p
+            class="w-140 rounded-md text-gray-700 font-semibold bg-purple-300/45  border-separate border-2 border-purple-500/20 p-4">
+            Row Span (row-span-n) Digunakan untuk menentukan berapa banyak baris yang akan ditempati oleh satu item (memanjang ke
+            bawah). Aturan: Agar terlihat hasilnya, item di sebelahnya harus cukup banyak atau parent harus memiliki tinggi yang
+            ditentukan (h-screen atau h-96). Kegunaan: Membuat Sidebar yang tingginya melewati beberapa baris konten.</p>
+    </div>
+
+    <div class="grid grid-cols-3  gap-4 h-96">
+        <div class="row-span-2 bg-yellow-500 text-white p-4">Item 1 (Row Span 3)</div>
+        <div class="bg-purple-500 text-white p-4">Item 2</div>
+        <div class="bg-purple-500 text-white p-4">Item 3</div>
+        <div class="bg-purple-500 text-white p-4">Item 4</div>
+        <div class="bg-purple-500 text-white p-4">Item 5</div>
+    </div>
+
+    <h2 class="text-center font-bold mt-8">Grid With col-start/col-end</h2>
+    <div class=" mb-4 flex-grow flex justify-center items-center gap-4">
+        <p
+            class="w-140 rounded-md text-gray-700 font-semibold bg-orange-300/45  border-separate border-2 border-orange-500/20 p-4">
+        Column Start & End (col-start-n / col-end-n) Digunakan untuk memaksa item mulai di garis kolom tertentu. Konsep Garis:
+        Jika ada 3 kolom, maka ada 4 garis vertikal. col-start-1: Mulai dari garis paling kiri.col-start-2: Mulai dari tengah
+        (setelah kolom pertama).Aturan: Ini akan menggeser item lain. Jika kamu menaruh item di col-start-3, maka kolom 1 dan 2
+        akan kosong jika tidak ada item lain.</p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4">
+        <div class="col-start-2 bg-teal-500 text-white p-4">Item 1 (Start at Column 2)</div>
+        <div class="bg-gray-500 text-white p-4">Item 2</div>
+        <div class="bg-gray-500 text-white p-4">Item 3</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Contoh Mengabungkan keduanya</title>
+</head>
+
+<body>
+    <!-- GRID: Mengatur Layout Besar (2 Kolom) -->
+    <div class="grid grid-cols-4 gap-4">
+
+        <!-- ITEM GRID 1: Sidebar -->
+        <div class="col-span-1 bg-gray-200 p-4">
+            <!-- FLEXBOX: Mengatur menu di dalam sidebar agar berderet ke bawah -->
+            <div class="flex flex-col  gap-4">
+                <span class="mb-6">Logo</span>
+                <a href="#">Dashboard</a>
+                <a href="#">Settings</a>
+            </div>
+        </div>
+
+        <!-- ITEM GRID 2: Konten Utama -->
+        <div class="col-span-3 bg-white p-4">
+            <!-- FLEXBOX: Menata judul dan tombol agar berjejer sampingan -->
+            <div class="flex justify-between items-center">
+                <h1>Data Pengguna</h1>
+                <button class="bg-blue-500 p-2">Tambah Data</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

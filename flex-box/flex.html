@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Flex None</title>
+</head>
+
+<body>
+    <!-- untuk menggunakan flex-none harus ada pembungkus/container parent 
+     agar item/child di dalam nya bisa teratur -->
+    <h2 class="text-center font-bold">Flex Normal Example</h2>
+    <div class="flex gap-2">
+        <!-- untuk menggunakan flex-none harus ada pembungkus/container parent -->
+        <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+    </div>
+
+    <!-- Flex With Justify -->
+    <!-- 
+        Justify digunakan untuk mengatur posisi item/child secara horizontal,
+         dengan menggunakan justify kita bisa mengatur posisi item/child ke kiri(start), tengah(center), kanan(end), 
+         atau bahkan membuat jarak antar item/child menjadi rata(justify-between).
+      -->
+    <h2 class="text-center font-bold">Flex With Justify </h2>
+    <p class="text-center">(Horizontal)</p>
+    <div class="flex justify-start gap-2">
+        <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+    </div>
+    <div class="flex justify-center gap-2">
+        <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+    </div>
+    <div class="flex justify-end gap-2">
+        <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+    </div>
+    <div class="flex justify-between gap-2">
+        <div class="bg-blue-300 my-2 w-[100px] text-center">4</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">4</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">4</div>
+    </div>
+
+    <!-- 
+            Align/Items digunakan untuk mengatur posisi item/child secara vertikal,
+            aturan pakai items ini sebuah parent harus memiliki tinggi/height
+            agar bisa terlihat perbedaannya,
+        -->
+    <!-- Flex With Align/Items -->
+    <h2 class="text-center font-bold">Flex With Align/Items </h2>
+    <p class="text-center">(Vertical)</p>
+    <div class="border-collapse border-2 border-gray-500">
+
+        <!-- start/top -->
+        <div class="flex justify-normal items-start h-20 gap-2 ">
+            <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+        </div>
+
+        <!-- center -->
+        <div class="flex justify-normal items-center h-20 gap-2 ">
+            <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+        </div>
+
+        <!-- end/bottom -->
+        <div class="flex justify-normal items-end h-20 gap-2 ">
+            <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+        </div>
+
+        <!-- baseline -->
+        <!-- 
+            Fungsinya: Memastikan semua teks di dalam kotak-kotak yang berbeda sejajar 
+            secara horizontal, meskipun ukuran font atau padding kotaknya beda-beda.
+         -->
+        <div class="flex items-baseline h-40 bg-gray-100 gap-2">
+            <div class="bg-blue-300 p-2 text-4xl">Besar</div>
+            <div class="bg-blue-300 p-2 text-sm">Kecil</div>
+            <div class="bg-blue-300 pt-10 text-lg">Padding Beda</div>
+        </div>
+    </div>
+
+    <!-- Inline -->
+    <!-- 
+        Inline-flex digunakan untuk membuat elemen flex yang hanya mengambil ruang sesuai dengan kontennya, 
+        bukan seluruh lebar parent seperti pada flex biasa. 
+        Dengan inline-flex, elemen akan tetap berada dalam aliran dokumen normal, 
+        sehingga bisa berdampingan dengan elemen lain di sekitarnya.
+     -->
+    <h2 class="text-center font-bold">Inline Flex</h2>
+    <div class="inline-flex gap-2">
+        <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+    </div>
+
+    <!-- 
+        Inline-flex With Justify
+         Dengan inline-flex, kita bisa menggunakan justify untuk mengatur posisi item/child secara horizontal, 
+         namun karena inline-flex hanya mengambil ruang sesuai dengan kontennya, 
+         maka justify akan bekerja berdasarkan lebar konten tersebut, bukan seluruh lebar parent.
+         jadi sebuah parnet harus memiliki lebar/(width) agar bisa terlihat perbedaannya.
+    -->
+    <h2 class="text-center font-bold">Inline Flex With Justify</h2>
+    <div class="inline-flex justify-center gap-2 border-collapse border-2 border-gray-500">
+        <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+    </div>
+
+    <h2 class="text-center font-bold">Flex Grow</h2>
+    <!-- 
+                Flex Grow digunakan untuk mengatur seberapa banyak sebuah item/child akan tumbuh untuk mengisi ruang yang tersedia dalam container flex. 
+                Dengan menggunakan flex-grow, kita bisa membuat item/child tertentu menjadi lebih besar atau lebih kecil dibandingkan dengan item/child lainnya, 
+                tergantung pada nilai yang diberikan.
+            -->
+    <div class="flex gap-2">
+        <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center flex-grow">2</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+    </div>
+
+    <h2 class="text-center font-bold">Flex Col</h2>
+    <!-- 
+                Flex Col digunakan untuk mengatur arah item/child dalam container flex menjadi kolom (vertikal) daripada baris (horizontal). 
+                Dengan menggunakan flex-col, item/child akan ditumpuk secara vertikal satu di atas yang lain, 
+                daripada disusun secara horizontal seperti pada flex biasa.
+            -->
+    <div class="flex flex-col gap-2">
+        <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+        <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+    </div>
+
+    <h2 class="text-center font-bold">Flex Col With Justify</h2>
+    <!-- 
+                Dengan flex-col, kita juga bisa menggunakan justify untuk mengatur posisi item/child secara vertikal, 
+                namun karena flex-col mengatur arah item/child menjadi kolom, 
+                maka justify akan bekerja berdasarkan tinggi konten tersebut, bukan seluruh tinggi parent.
+                jadi sebuah parnet harus memiliki tinggi/(height) agar bisa terlihat perbedaannya.
+                nahh justify di sini (di flex-col) menjadi items/align.
+
+            -->
+    <div class="border-separate border-2 border-gray-500 ">
+        <div class="flex flex-col justify-start gap-2 h-40 ">
+            <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+        </div>
+        <div class="flex flex-col justify-center gap-2 h-40 ">
+            <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+        </div>
+        <div class="flex flex-col justify-end gap-2 h-40 ">
+            <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+        </div>
+        <div class="flex flex-col justify-between gap-2 h-40 ">
+            <div class="bg-blue-300 my-2 w-[100px] text-center">4</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">4</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">4</div>
+        </div>
+    </div>
+
+    <h2 class="text-center font-bold">Flex Col With Items</h2>
+    <!-- 
+                Dengan flex-col, kita juga bisa menggunakan items untuk mengatur posisi item/child secara horizontal, 
+                namun karena flex-col mengatur arah item/child menjadi kolom, 
+                maka items akan bekerja berdasarkan lebar konten tersebut, bukan seluruh lebar parent.
+                jadi sebuah parnet harus memiliki lebar/(width) agar bisa terlihat perbedaannya.
+                nahh items di sini (di flex-col) menjadi justify.
+
+            -->
+    <div class="border-separate border-2 border-gray-500 ">
+        <div class="flex flex-col items-start gap-2 h-40 ">
+            <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">1</div>
+        </div>
+        <div class="flex flex-col items-center gap-2 h-40 ">
+            <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">2</div>
+        </div>
+        <div class="flex flex-col items-end gap-2 h-40 ">
+            <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">3</div>
+        </div>
+        <div class="flex flex-col items-stretch gap-2 h-40 ">
+            <div class="bg-blue-300 my-2 w-[100px] text-center">4</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">4</div>
+            <div class="bg-blue-300 my-2 w-[100px] text-center">4</div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
